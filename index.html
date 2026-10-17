@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <title>CarePlus</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarePlus | Tu tienda de cuidado personal</title>
+<!-- Enlace al archivo CSS -->
+<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    
+<header>
+  <div class="wrap navbar">
+    <a class="brand" href="#inicio" aria-label="CarePlus, inicio"><div class="logo">✿</div><div><strong>CarePlus</strong><small>Tu belleza, nuestra prioridad</small></div></a>
+    <nav aria-label="Menú de la tienda"><a href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#catalogo">Productos</a><a href="#pedido">Mi pedido</a></nav>
+    <div class="nav-right"><input class="search" id="header-search" type="search" placeholder="Buscar productos..." aria-label="Buscar productos"><button class="cart-btn" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">🛒 <span id="cart-count">0</span></button></div>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <section class="hero" id="inicio">
+      <div><div class="eyebrow">Tu rutina, tu momento</div><h1>Cuida de ti.<br>Siéntete increíble.</h1><p>Descubre productos para tu piel, cabello y bienestar. Encuentra tus favoritos y recíbelos cómodamente en casa.</p><div class="hero-actions"><button class="btn btn-primary" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Ver productos →</button><button class="btn btn-light" onclick="document.getElementById('categorias').scrollIntoView({behavior:'smooth'})">Explorar categorías</button></div></div>
+      <div class="hero-art" aria-hidden="true"><span>🧴🌿</span></div>
+    </section>
+    <div class="benefits">
+      <div class="benefit"><div class="benefit-icon">🚚</div><div><strong>Entrega a domicilio</strong><small>Recibe tu compra en la dirección que elijas.</small></div></div>
+      <div class="benefit"><div class="benefit-icon">♡</div><div><strong>Productos para ti</strong><small>Opciones para distintas rutinas de cuidado.</small></div></div>
+      <div class="benefit"><div class="benefit-icon">🔒</div><div><strong>Compra sencilla</strong><small>Revisa tu pedido antes de confirmarlo.</small></div></div>
+    </div>
+    <section id="categorias">
+      <div class="section-head"><div><h2>Compra por categoría</h2><p>Encuentra rápidamente lo que necesitas.</p></div></div>
+      <div class="categories">
+        <button class="category" data-cat="Facial"><span>🧖</span>Cuidado facial</button>
+        <button class="category" data-cat="Capilar"><span>🧴</span>Cuidado capilar</button>
+        <button class="category" data-cat="Higiene"><span>🫧</span>Higiene personal</button>
+        <button class="category" data-cat="Perfumes"><span>🌸</span>Perfumes</button>
+        <button class="category" data-cat="Cremas"><span>🌿</span>Cremas y lociones</button>
+      </div>
+    </section>
+    <section id="catalogo">
+      <div class="section-head"><div><h2>Nuestros productos</h2><p>Explora el catálogo y agrega tus favoritos al carrito.</p></div></div>
+      <div class="shop-tools"><input id="product-search" type="search" placeholder="¿Qué producto estás buscando?"><select id="category-filter"><option value="">Todas las categorías</option><option>Facial</option><option>Capilar</option><option>Higiene</option><option>Perfumes</option><option>Cremas</option></select><select id="sort-filter"><option value="featured">Ordenar: destacados</option><option value="price-up">Precio: menor a mayor</option><option value="price-down">Precio: mayor a menor</option></select></div>
+      <div class="products" id="products"></div>
+    </section>
+    <section class="checkout-area" id="pedido">
+      <div class="panel">
+        <div class="notice" id="notice" role="status"></div>
+        <h2>Datos para tu pedido</h2><p class="panel-intro">Completa tus datos para que podamos preparar y entregar tu compra.</p>
+        <form id="checkout-form">
+          <div class="form-grid">
+            <div class="field"><label for="first-name">Nombres *</label><input id="first-name" required placeholder="Tus nombres"></div>
+            <div class="field"><label for="last-name">Apellidos *</label><input id="last-name" required placeholder="Tus apellidos"></div>
+            <div class="field"><label for="dni">DNI (opcional)</label><input id="dni" inputmode="numeric" maxlength="8" placeholder="8 dígitos"></div>
+            <div class="field"><label for="phone">Teléfono *</label><input id="phone" required inputmode="tel" placeholder="Ej. 987 654 321"></div>
+            <div class="field full"><label for="email">Correo electrónico (opcional)</label><input id="email" type="email" placeholder="tu@correo.com"></div>
+            <div class="field full"><label for="address">Dirección de entrega *</label><input id="address" required placeholder="Avenida, calle, número o referencia"></div>
+            <div class="field"><label for="district">Distrito *</label><input id="district" required placeholder="Tu distrito"></div>
+            <div class="field"><label for="payment">Método de pago *</label><select id="payment" required><option value="">Selecciona</option><option>Pago contra entrega</option><option>Transferencia bancaria</option><option>Billetera digital</option><option>Tarjeta</option></select></div>
+            <div class="field full"><label for="comments">Indicaciones adicionales (opcional)</label><textarea id="comments" rows="3" placeholder="Referencia de la dirección o instrucciones para la entrega"></textarea></div>
+          </div>
+          <button class="btn btn-primary wide" type="submit">Confirmar pedido</button>
+          <p class="note">Demostración académica: este formulario no procesa pagos reales ni envía los datos a una tienda.</p>
+        </form>
+      </div>
+      <aside class="panel">
+        <h3>Resumen de tu carrito</h3><p class="panel-intro">Verifica los productos y las cantidades antes de confirmar.</p>
+        <div id="cart-items"><div class="empty">Tu carrito está vacío. Agrega productos del catálogo.</div></div>
+        <div class="totals"><div class="total-row"><span>Subtotal</span><strong id="subtotal">S/ 0.00</strong></div><div class="total-row"><span>Envío</span><strong id="shipping">S/ 7.00</strong></div><div class="total-row final"><span>Total</span><strong id="total">S/ 7.00</strong></div></div>
+        <p class="note">El costo de envío mostrado es referencial. Puede variar según la zona de entrega.</p>
+      </aside>
+    </section>
+  </div>
+</main>
+<footer><div class="wrap footer-inner"><div><a class="brand" href="#inicio" style="color:white"><div class="logo">✿</div><div><strong>CarePlus</strong><small style="color:#d1cfe0">Tu belleza, nuestra prioridad</small></div></a><p>Productos de cuidado personal para acompañarte en tu rutina diaria.</p></div><div class="footer-links"><a href="#catalogo">Productos</a><a href="#categorias">Categorías</a><a href="#pedido">Hacer un pedido</a></div></div></footer>
+
+<!-- Enlace al archivo JavaScript -->
+<script src="js/index.js"></script>
 </body>
 </html>
-

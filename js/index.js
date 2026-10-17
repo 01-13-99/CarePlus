@@ -1,12 +1,12 @@
 const products = [
-    { id: 1, name: 'Crema facial hidratante', category: 'Facial', price: 29.90, stock: 25, icon: '🧴', desc: 'Hidratación diaria para una piel suave.' },
-    { id: 2, name: 'Shampoo anticaspa', category: 'Capilar', price: 22.50, stock: 10, icon: '🫧', desc: 'Limpieza y cuidado para tu cabello.' },
-    { id: 3, name: 'Desodorante roll-on', category: 'Higiene', price: 12.90, stock: 50, icon: '🧼', desc: 'Frescura y protección para cada día.' },
-    { id: 4, name: 'Perfume floral', category: 'Perfumes', price: 69.90, stock: 8, icon: '🌸', desc: 'Una fragancia delicada para tu rutina.' },
-    { id: 5, name: 'Crema corporal', category: 'Cremas', price: 24.90, stock: 18, icon: '🌿', desc: 'Nutrición e hidratación corporal.' },
-    { id: 6, name: 'Protector solar FPS 50', category: 'Facial', price: 39.90, stock: 27, icon: '☀️', desc: 'Protección solar para el cuidado diario.' },
-    { id: 7, name: 'Acondicionador nutritivo', category: 'Capilar', price: 21.90, stock: 16, icon: '🧴', desc: 'Ayuda a suavizar y desenredar el cabello.' },
-    { id: 8, name: 'Jabón líquido suave', category: 'Higiene', price: 15.50, stock: 32, icon: '🫧', desc: 'Limpieza suave para uso diario.' }
+    { id: 1, name: 'Crema facial hidratante', category: 'Facial', price: 29.90, stock: 25, image:'./images/crema facial hidratante.jpg', desc: 'Hidratación diaria para una piel suave.' },
+    { id: 2, name: 'Shampoo anticaspa', category: 'Capilar', price: 22.50, stock: 10, image:'./images/acondicionador.jpg', desc: 'Limpieza y cuidado para tu cabello.' },
+    { id: 3, name: 'Desodorante roll-on', category: 'Higiene', price: 12.90, stock: 50, image:'./images/desodorante roll-on.jpg', desc: 'Frescura y protección para cada día.' },
+    { id: 4, name: 'Perfume floral', category: 'Perfumes', price: 69.90, stock: 8, image:'./images/Perfume floral.jpg', desc: 'Una fragancia delicada para tu rutina.' },
+    { id: 5, name: 'Crema corporal', category: 'Cremas', price: 24.90, stock: 18, image: './images/crema corporal.jpg', desc: 'Nutrición e hidratación corporal.' },
+    { id: 6, name: 'Protector solar FPS 50', category: 'Facial', price: 39.90, stock: 27, image: './images/acondicionador.jpg', desc: 'Protección solar para el cuidado diario.' },
+    { id: 7, name: 'Acondicionador nutritivo', category: 'Capilar', price: 21.90, stock: 16, image: './images/acondicionador.jpg', desc: 'Ayuda a suavizar y desenredar el cabello.' },
+    { id: 8, name: 'Jabón líquido suave', category: 'Higiene', price: 15.50, stock: 32, image: './images/jabon liquido suave.jpg', desc: 'Limpieza suave para uso diario.' }
 ];
 
 
@@ -19,7 +19,7 @@ function renderProducts() {
     const q = $('product-search').value.toLowerCase().trim(), cat = $('category-filter').value, sort = $('sort-filter').value;
     let list = products.filter(p => (p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)) && (!cat || p.category === cat));
     if (sort === 'price-up') list.sort((a, b) => a.price - b.price); if (sort === 'price-down') list.sort((a, b) => b.price - a.price);
-    $('products').innerHTML = list.map(p => `<article class="product"><div class="product-art">${p.icon}</div><div class="product-category">${esc(p.category)}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="product-foot"><span class="price">${money(p.price)}</span><button class="add" aria-label="Agregar ${esc(p.name)} al carrito" onclick="addToCart(${p.id})">+</button></div><div class="stock-note">${p.stock > 0 ? '✓ Disponible' : 'Agotado'}</div></article>`).join('') || '<div class="empty">No encontramos productos con esos filtros.</div>';
+    $('products').innerHTML = list.map(p => `<article class="product"><div class="product-art"><img src="${p.image}" style="width:100%;height:100%;object-fit:contain;"></div><div class="product-category">${esc(p.category)}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="product-foot"><span class="price">${money(p.price)}</span><button class="add" aria-label="Agregar ${esc(p.name)} al carrito" onclick="addToCart(${p.id})">+</button></div><div class="stock-note">${p.stock > 0 ? '✓ Disponible' : 'Agotado'}</div></article>`).join('') || '<div class="empty">No encontramos productos con esos filtros.</div>';
 }
 
 function addToCart(id) { const p = products.find(p => p.id === id); if (!p || p.stock < 1) return showNotice('Este producto no está disponible.'); const item = cart.find(i => i.id === id); if (item) { if (item.qty >= p.stock) return showNotice('No quedan más unidades disponibles.'); item.qty++; } else cart.push({ id, qty: 1 }); renderCart(); showNotice('Producto agregado a tu carrito.'); }

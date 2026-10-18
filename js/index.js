@@ -1,6 +1,6 @@
 const products = [
     { id: 1, name: 'Crema facial hidratante', category: 'Facial', price: 29.90, stock: 25, image:'./images/crema facial hidratante.jpg', desc: 'Hidratación diaria para una piel suave.' },
-    { id: 2, name: 'Shampoo anticaspa', category: 'Capilar', price: 22.50, stock: 10, image:'./images/Shampoo.jpg', desc: 'Limpieza y cuidado para tu cabello.' },
+    { id: 2, name: 'Shampoo anticaspa', category: 'Capilar', price: 22.50, stock: 10, image:'./images/shampoo.jpg', desc: 'Limpieza y cuidado para tu cabello.' },
     { id: 3, name: 'Desodorante roll-on', category: 'Higiene', price: 12.90, stock: 50, image:'./images/desodorante roll-on.jpg', desc: 'Frescura y protección para cada día.' },
     { id: 4, name: 'Perfume floral', category: 'Perfumes', price: 69.90, stock: 8, image:'./images/Perfume floral.jpg', desc: 'Una fragancia delicada para tu rutina.' },
     { id: 5, name: 'Crema corporal', category: 'Cremas', price: 24.90, stock: 18, image: './images/crema corporal.jpg', desc: 'Nutrición e hidratación corporal.' },

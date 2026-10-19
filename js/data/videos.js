@@ -18,7 +18,7 @@ window.careplusVideos = [
         category: 'marca',
         description: 'Descubre la esencia de CarePlus y los productos que acompañan tu día.',
         poster: './images/crema facial hidratante.jpg',
-        src: '', // Ejemplo: './videos/conoce-careplus.mp4'
+        src: './videos/CarePlus_video_principal.mp4', // Ejemplo: './videos/conoce-careplus.mp4'
         featured: true
     },
     {
@@ -27,7 +27,7 @@ window.careplusVideos = [
         category: 'productos',
         description: 'Conoce nuestro protector solar y su lugar en una rutina de cuidado.',
         poster: './images/protector.jpg',
-        src: '' // Ejemplo: './videos/protector-solar.mp4'
+        src: './videos/protector_solar_video.mp4' // Ejemplo: './videos/protector-solar.mp4'
     },
     {
         id: 'rutina-facial',
@@ -35,7 +35,7 @@ window.careplusVideos = [
         category: 'rutinas',
         description: 'Tres pasos cotidianos: limpieza, hidratación y protección.',
         poster: './images/crema facial hidratante.jpg',
-        src: '' // Ejemplo: './videos/rutina-facial.mp4'
+        src: './videos/rutina_video.mp4' // Ejemplo: './videos/rutina-facial.mp4'
     },
     {
         id: 'cuidado-capilar',
@@ -43,7 +43,7 @@ window.careplusVideos = [
         category: 'productos',
         description: 'Una mirada a nuestro shampoo y acondicionador.',
         poster: './images/Shampoo.jpg',
-        src: '' // Ejemplo: './videos/cuidado-capilar.mp4'
+        src: './videos/video_shampoo.mp4' // Ejemplo: './videos/cuidado-capilar.mp4'
     },
     {
         id: 'perfume-floral',
@@ -51,7 +51,7 @@ window.careplusVideos = [
         category: 'productos',
         description: 'Un detalle floral para acompañar tus momentos.',
         poster: './images/Perfume floral.jpg',
-        src: '' // Ejemplo: './videos/perfume-floral.mp4'
+        src: './videos/video_perfume.mp4' // Ejemplo: './videos/perfume-floral.mp4'
     },
     {
         id: 'habitos-cotidianos',
@@ -59,6 +59,6 @@ window.careplusVideos = [
         category: 'consejos',
         description: 'Ideas simples para dedicarte unos minutos cada día.',
         poster: './images/crema corporal.jpg',
-        src: '' // Ejemplo: './videos/habitos-cotidianos.mp4'
+        src: './videos/hidratante_video.mp4' // Ejemplo: './videos/habitos-cotidianos.mp4'
     }
 ];

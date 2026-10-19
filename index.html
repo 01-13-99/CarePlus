@@ -7,6 +7,8 @@
     <title>CarePlus | Tu tienda de cuidado personal</title>
     <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="css/estilos.css">
+    <!-- Estilos exclusivos de la sección Videos. -->
+    <link rel="stylesheet" href="css/videos.css">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
                 <div><strong>CarePlus</strong><small>Tu belleza, nuestra prioridad</small></div>
             </a>
             <nav aria-label="Menú de la tienda"><a href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a
-                    href="#catalogo">Productos</a><a href="#pedido">Mi pedido</a></nav>
+                    href="#catalogo">Productos</a><a href="#videos">Videos</a><a href="#pedido">Mi pedido</a></nav>
             <div class="nav-right"><input class="search" id="header-search" type="search"
                     placeholder="Buscar productos..." aria-label="Buscar productos"><button class="cart-btn"
                     onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">🛒 <span
@@ -97,6 +99,37 @@
                     </select></div>
                 <div class="products" id="products"></div>
             </section>
+            <!-- CAREPLUS TV: sección integrada en esta misma página (no se abre otro HTML). -->
+            <section class="cpv-section" id="videos" aria-labelledby="cpv-title">
+                <div class="section-head cpv-section-head">
+                    <div>
+                        <span class="cpv-eyebrow">CAREPLUS TV · TU ESPACIO DE CUIDADO</span>
+                        <h2 id="cpv-title">Inspírate con CarePlus</h2>
+                        <p>Descubre nuestros productos, rutinas sencillas y pequeños momentos de bienestar.</p>
+                    </div>
+                    <a class="cpv-text-link" href="#catalogo">Explorar productos <span aria-hidden="true">↗</span></a>
+                </div>
+
+                <!-- El video principal se construye con los datos de js/data/videos.js. -->
+                <div id="cpv-featured"></div>
+
+                <div class="cpv-library-heading">
+                    <div>
+                        <h3>Explora nuestros videos</h3>
+                        <p>Contenido breve para conocer mejor cada producto y encontrar nuevas ideas.</p>
+                    </div>
+                    <div class="cpv-filters" role="group" aria-label="Filtrar videos por categoría">
+                        <button type="button" class="cpv-filter is-active" data-video-filter="todos" aria-pressed="true">Todos</button>
+                        <button type="button" class="cpv-filter" data-video-filter="productos" aria-pressed="false">Productos</button>
+                        <button type="button" class="cpv-filter" data-video-filter="rutinas" aria-pressed="false">Rutinas</button>
+                        <button type="button" class="cpv-filter" data-video-filter="consejos" aria-pressed="false">Consejos</button>
+                    </div>
+                </div>
+                <!-- Las tarjetas se generan con JavaScript; no hay que copiarlas en el HTML. -->
+                <div class="cpv-grid" id="cpv-grid" aria-live="polite"></div>
+                <p class="cpv-empty" id="cpv-empty" hidden>No hay videos en esta categoría por ahora.</p>
+            </section>
+
             <section class="checkout-area" id="pedido">
                 <div class="panel">
                     <div class="notice" id="notice" role="status"></div>
@@ -162,13 +195,32 @@
                 </a>
                 <p>Productos de cuidado personal para acompañarte en tu rutina diaria.</p>
             </div>
-            <div class="footer-links"><a href="#catalogo">Productos</a><a href="#categorias">Categorías</a><a
+            <div class="footer-links"><a href="#catalogo">Productos</a><a href="#categorias">Categorías</a><a href="#videos">Videos</a><a
                     href="#pedido">Hacer un pedido</a></div>
         </div>
     </footer>
 
-    <!-- Enlace al archivo JavaScript -->
+    <!-- Reproductor modal: se abre sobre la página actual, sin navegar a otra URL. -->
+    <dialog class="cpv-dialog" id="cpv-dialog" aria-labelledby="cpv-dialog-title">
+        <div class="cpv-dialog__inner">
+            <div class="cpv-dialog__top">
+                <div>
+                    <span class="cpv-eyebrow">CAREPLUS TV</span>
+                    <h2 id="cpv-dialog-title">Video de CarePlus</h2>
+                </div>
+                <button class="cpv-dialog__close" id="cpv-dialog-close" type="button" aria-label="Cerrar video">×</button>
+            </div>
+            <video id="cpv-player" controls playsinline preload="none"></video>
+            <p class="cpv-dialog__description" id="cpv-dialog-description"></p>
+            <p class="cpv-dialog__error" id="cpv-dialog-error" role="alert" hidden>No se pudo reproducir el video. Comprueba que el archivo MP4 exista en la carpeta indicada.</p>
+        </div>
+    </dialog>
+
+    <!-- Se conserva el JavaScript original del catálogo, carrito y pedidos. -->
     <script src="js/index.js"></script>
+    <!-- Datos y lógica de la nueva sección, en archivos independientes. -->
+    <script src="js/data/videos.js"></script>
+    <script src="js/videos.js"></script>
 </body>
 
 </html>

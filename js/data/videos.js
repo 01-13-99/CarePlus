@@ -1,5 +1,5 @@
 /*
- * CAREPLUS TV — CATÁLOGO DE VIDEOS
+ * CAREPLUS — CATÁLOGO DE VIDEOS
  *
  * PARA PUBLICAR UN VIDEO:
  * 1. Copia el archivo MP4 dentro de la carpeta videos/ (en la raíz del proyecto).
@@ -7,9 +7,10 @@
  *       src: './videos/conoce-careplus.mp4',
  * 3. Guarda los cambios. La tarjeta se habilita de forma automática.
  *
- * Mientras src sea '' (texto vacío), se mostrará "Próximamente".
+ * Los seis MP4 originales ya tienen una ruta src y están incluidos en la entrega.
+ * Si borras src (texto vacío), se mostrará "Próximamente".
  * "poster" es la fotografía que aparece como portada del video.
- * Las rutas son relativas a index.html, ya que CarePlus es UNA SOLA PÁGINA.
+ * Las rutas son relativas a videos.html, ubicada en la raíz del proyecto.
  */
 window.careplusVideos = [
     {

@@ -1,0 +1,137 @@
+/* Estilos exclusivos de index.html, la portada. */
+.home-hero {
+    min-height: 375px;
+}
+
+.hero-showcase {
+    min-width: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0;
+    height: 265px;
+    position: relative;
+}
+
+.hero-bottle {
+    width: 37%;
+    max-width: 170px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 19px;
+    background: rgba(255, 255, 255, .86);
+    border: 1px solid rgba(255, 255, 255, .8);
+    box-shadow: 0 22px 40px #6046c72a;
+}
+
+.hero-bottle-one {
+    transform: rotate(-10deg) translate(26px, 12px);
+    height: 206px;
+}
+
+.hero-bottle-two {
+    height: 245px;
+    transform: translateY(-2px);
+    z-index: 2;
+}
+
+.hero-bottle-three {
+    height: 205px;
+    transform: rotate(9deg) translate(-25px, 12px);
+}
+
+.home-categories a {
+    text-decoration: none;
+    display: block;
+}
+
+.home-video-teaser {
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    align-items: center;
+    gap: 28px;
+    padding: 29px;
+    background: linear-gradient(110deg, #f1ecff, #faf5ff);
+    border-radius: 24px;
+}
+
+.home-video-teaser h2 {
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.2;
+    margin: 11px 0;
+}
+
+.home-video-teaser p {
+    color: #69687d;
+    line-height: 1.75;
+    font-size: 14px;
+    max-width: 420px;
+}
+
+.teaser-media {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px #6046c720;
+    background: #181426;
+}
+
+.teaser-media video {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
+@media(max-width:850px) {
+    .home-hero {
+        grid-template-columns: 1fr 1fr;
+        padding: 30px;
+    }
+
+    .hero-showcase {
+        height: 230px;
+    }
+
+    .hero-bottle {
+        height: 170px;
+    }
+
+    .hero-bottle-two {
+        height: 205px;
+    }
+
+    .home-video-teaser {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:680px) {
+    .home-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-showcase {
+        height: 190px;
+        margin-top: 15px;
+    }
+
+    .hero-bottle {
+        height: 155px;
+    }
+
+    .hero-bottle-two {
+        height: 185px;
+    }
+
+    .home-categories .category:last-child {
+        grid-column: auto;
+    }
+
+    .home-video-teaser {
+        padding: 23px;
+    }
+
+    .teaser-media video {
+        height: 220px;
+    }
+}

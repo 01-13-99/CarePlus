@@ -1,4 +1,4 @@
-/* CAREPLUS TV — Presentación, filtros y reproducción sin salir de index.html. */
+/* CAREPLUS TV — Presentación, filtros y reproducción en videos.html. */
 (() => {
     'use strict';
 
@@ -53,7 +53,7 @@
                         <button type="button" class="btn btn-primary cpv-watch" data-video-id="${safe(video.id)}" ${available ? '' : 'disabled'}>
                             ${available ? '▶ Ver video' : 'Próximamente'}
                         </button>
-                        <a class="btn btn-light" href="#catalogo" style="text-decoration:none">Ver productos →</a>
+                        <a class="btn btn-light" href="productos.html" style="text-decoration:none">Ver productos →</a>
                     </div>
                     <span class="cpv-feature__note">${available ? 'Disfruta el contenido sin salir de CarePlus.' : 'Estamos preparando este contenido para ti.'}</span>
                 </div>

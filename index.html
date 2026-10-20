@@ -1,233 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarePlus | Tu tienda de cuidado personal</title>
-    <!-- Enlace al archivo CSS -->
-    <link rel="stylesheet" href="css/estilos.css">
-    <!-- Estilos exclusivos de la sección Videos. -->
-    <link rel="stylesheet" href="css/videos.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CarePlus: cuidado personal, productos para el rostro, el cuerpo y el cabello.">
+  <title>Inicio | CarePlus</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <header>
-        <div class="wrap navbar">
-            <a class="brand" href="#inicio" aria-label="CarePlus, inicio">
-                <div class="logo">✿</div>
-                <div><strong>CarePlus</strong><small>Tu belleza, nuestra prioridad</small></div>
-            </a>
-            <nav aria-label="Menú de la tienda"><a href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a
-                    href="#catalogo">Productos</a><a href="#videos">Videos</a><a href="#pedido">Mi pedido</a></nav>
-            <div class="nav-right"><input class="search" id="header-search" type="search"
-                    placeholder="Buscar productos..." aria-label="Buscar productos"><button class="cart-btn"
-                    onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">🛒 <span
-                        id="cart-count">0</span></button></div>
+  <header>
+    <div class="wrap navbar">
+      <a class="brand" href="index.html" aria-label="CarePlus: ir al inicio"><span class="logo-flower"
+          aria-hidden="true"><svg viewBox="0 0 50 54" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23 27C12 14 21 3 32 1c6 13 4 20-9 26Z" fill="#6046c7" />
+            <path d="M25 28C7 18 1 30 2 42c13 7 24 2 23-14Z" fill="#28a895" />
+            <path d="M25 29c7-13 18-15 23-9-1 18-10 26-24 25Z" fill="#4932a7" />
+            <path d="M24 30c-1 10-3 17-7 22" fill="none" stroke="#28a895" stroke-width="2.3" stroke-linecap="round" />
+          </svg></span><span><strong><span class="brand-care">Care</span><span
+              class="brand-plus">Plus</span></strong><small class="tagline">Tu belleza, nuestra
+            prioridad</small></span></a>
+      <nav aria-label="Navegación principal"><a href="index.html" aria-current="page">Inicio</a><a
+          href="categorias.html">Categorías</a><a href="productos.html">Productos</a><a href="videos.html">Videos</a><a
+          href="mi-pedido.html">Mi pedido</a></nav>
+      <div class="nav-right">
+        <form class="nav-search-form" id="global-search-form" role="search"><input id="header-search" class="search"
+            type="search" placeholder="Buscar productos..." aria-label="Buscar productos" autocomplete="off"></form>
+        <a class="cart-btn" href="mi-pedido.html#carrito" aria-label="Ir a mi carrito">🛒 <span
+            id="cart-count">0</span></a>
+      </div>
+    </div>
+  </header>
+  <main class="page-main">
+    <div class="wrap">
+      <section class="hero home-hero" id="inicio">
+        <div>
+          <div class="eyebrow">Tu rutina, tu momento</div>
+          <h1>Tu belleza,<br>nuestra prioridad.</h1>
+          <p>Descubre productos para tu piel, cabello y bienestar. Encuentra tus favoritos en un solo lugar y prepara tu
+            pedido fácilmente.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="productos.html">Ver productos →</a><a
+              class="btn btn-light" href="categorias.html">Explorar categorías</a></div>
         </div>
-    </header>
-    <main>
-        <div class="wrap">
-            <section class="hero" id="inicio">
-                <div>
-                    <div class="eyebrow">Tu rutina, tu momento</div>
-                    <h1>Cuida de ti.<br>Siéntete increíble.</h1>
-                    <p>Descubre productos para tu piel, cabello y bienestar. Encuentra tus favoritos y recíbelos
-                        cómodamente en casa.</p>
-                    <div class="hero-actions">
-                        <button class="btn btn-primary" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Ver productos →</button>
-                        <button class="btn btn-light" onclick="document.getElementById('categorias').scrollIntoView({behavior:'smooth'})">Explorar categorías</button>
-                    </div>
-                </div>
-                <div class="hero-art" aria-hidden="true">
-                    <span>🧴🌿</span>
-                </div>
-            </section>
-
-            <div class="benefits">
-                <div class="benefit">
-                    <div class="benefit-icon">🚚</div>
-                    <div><strong>Entrega a domicilio</strong><small>Recibe tu compra en la dirección que elijas.</small>
-                    </div>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-icon">♡</div>
-                    <div><strong>Productos para ti</strong><small>Opciones para distintas rutinas de cuidado.</small>
-                    </div>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-icon">🔒</div>
-                    <div><strong>Compra sencilla</strong><small>Revisa tu pedido antes de confirmarlo.</small></div>
-                </div>
-            </div>
-
-            <section id="categorias">
-                <div class="section-head">
-                    <div>
-                        <h2>Compra por categoría</h2>
-                        <p>Encuentra rápidamente lo que necesitas.</p>
-                    </div>
-                </div>
-                <div class="categories">
-                    <button class="category" data-cat="Facial"><span>🧖</span>Cuidado facial</button>
-                    <button class="category" data-cat="Capilar"><span>🧴</span>Cuidado capilar</button>
-                    <button class="category" data-cat="Higiene"><span>🫧</span>Higiene personal</button>
-                    <button class="category" data-cat="Perfumes"><span>🌸</span>Perfumes</button>
-                    <button class="category" data-cat="Cremas"><span>🌿</span>Cremas y lociones</button>
-                </div>
-            </section>
-
-
-            <section id="catalogo">
-                <div class="section-head">
-                    <div>
-                        <h2>Nuestros productos</h2>
-                        <p>Explora el catálogo y agrega tus favoritos al carrito.</p>
-                    </div>
-                </div>
-                <div class="shop-tools"><input id="product-search" type="search"
-                        placeholder="¿Qué producto estás buscando?"><select id="category-filter">
-                        <option value="">Todas las categorías</option>
-                        <option>Facial</option>
-                        <option>Capilar</option>
-                        <option>Higiene</option>
-                        <option>Perfumes</option>
-                        <option>Cremas</option>
-                    </select><select id="sort-filter">
-                        <option value="featured">Ordenar: destacados</option>
-                        <option value="price-up">Precio: menor a mayor</option>
-                        <option value="price-down">Precio: mayor a menor</option>
-                    </select></div>
-                <div class="products" id="products"></div>
-            </section>
-            <!-- CAREPLUS TV: sección integrada en esta misma página (no se abre otro HTML). -->
-            <section class="cpv-section" id="videos" aria-labelledby="cpv-title">
-                <div class="section-head cpv-section-head">
-                    <div>
-                        <span class="cpv-eyebrow">CAREPLUS TV · TU ESPACIO DE CUIDADO</span>
-                        <h2 id="cpv-title">Inspírate con CarePlus</h2>
-                        <p>Descubre nuestros productos, rutinas sencillas y pequeños momentos de bienestar.</p>
-                    </div>
-                    <a class="cpv-text-link" href="#catalogo">Explorar productos <span aria-hidden="true">↗</span></a>
-                </div>
-
-                <!-- El video principal se construye con los datos de js/data/videos.js. -->
-                <div id="cpv-featured"></div>
-
-                <div class="cpv-library-heading">
-                    <div>
-                        <h3>Explora nuestros videos</h3>
-                        <p>Contenido breve para conocer mejor cada producto y encontrar nuevas ideas.</p>
-                    </div>
-                    <div class="cpv-filters" role="group" aria-label="Filtrar videos por categoría">
-                        <button type="button" class="cpv-filter is-active" data-video-filter="todos"
-                            aria-pressed="true">Todos</button>
-                        <button type="button" class="cpv-filter" data-video-filter="productos"
-                            aria-pressed="false">Productos</button>
-                        <button type="button" class="cpv-filter" data-video-filter="rutinas"
-                            aria-pressed="false">Rutinas</button>
-                        <button type="button" class="cpv-filter" data-video-filter="consejos"
-                            aria-pressed="false">Consejos</button>
-                    </div>
-                </div>
-                <!-- Las tarjetas se generan con JavaScript; no hay que copiarlas en el HTML. -->
-                <div class="cpv-grid" id="cpv-grid" aria-live="polite"></div>
-                <p class="cpv-empty" id="cpv-empty" hidden>No hay videos en esta categoría por ahora.</p>
-            </section>
-
-            <section class="checkout-area" id="pedido">
-                <div class="panel">
-                    <div class="notice" id="notice" role="status"></div>
-                    <h2>Datos para tu pedido</h2>
-                    <p class="panel-intro">Completa tus datos para que podamos preparar y entregar tu compra.</p>
-                    <form id="checkout-form">
-                        <div class="form-grid">
-                            <div class="field"><label for="first-name">Nombres *</label><input id="first-name" required
-                                    placeholder="Tus nombres"></div>
-                            <div class="field"><label for="last-name">Apellidos *</label><input id="last-name" required
-                                    placeholder="Tus apellidos"></div>
-                            <div class="field"><label for="dni">DNI (opcional)</label><input id="dni"
-                                    inputmode="numeric" maxlength="8" placeholder="8 dígitos"></div>
-                            <div class="field"><label for="phone">Teléfono *</label><input id="phone" required
-                                    inputmode="tel" placeholder="Ej. 987 654 321"></div>
-                            <div class="field full"><label for="email">Correo electrónico (opcional)</label><input
-                                    id="email" type="email" placeholder="tu@correo.com"></div>
-                            <div class="field full"><label for="address">Dirección de entrega *</label><input
-                                    id="address" required placeholder="Avenida, calle, número o referencia"></div>
-                            <div class="field"><label for="district">Distrito *</label><input id="district" required
-                                    placeholder="Tu distrito"></div>
-                            <div class="field"><label for="payment">Método de pago *</label><select id="payment"
-                                    required>
-                                    <option value="">Selecciona</option>
-                                    <option>Pago contra entrega</option>
-                                    <option>Transferencia bancaria</option>
-                                    <option>Billetera digital</option>
-                                    <option>Tarjeta</option>
-                                </select></div>
-                            <div class="field full"><label for="comments">Indicaciones adicionales
-                                    (opcional)</label><textarea id="comments" rows="3"
-                                    placeholder="Referencia de la dirección o instrucciones para la entrega"></textarea>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary wide" type="submit">Confirmar pedido</button>
-                        <p class="note">Demostración académica: este formulario no procesa pagos reales ni envía los
-                            datos a una tienda.</p>
-                    </form>
-                </div>
-                <aside class="panel">
-                    <h3>Resumen de tu carrito</h3>
-                    <p class="panel-intro">Verifica los productos y las cantidades antes de confirmar.</p>
-                    <div id="cart-items">
-                        <div class="empty">Tu carrito está vacío. Agrega productos del catálogo.</div>
-                    </div>
-                    <div class="totals">
-                        <div class="total-row"><span>Subtotal</span><strong id="subtotal">S/ 0.00</strong></div>
-                        <div class="total-row"><span>Envío</span><strong id="shipping">S/ 7.00</strong></div>
-                        <div class="total-row final"><span>Total</span><strong id="total">S/ 7.00</strong></div>
-                    </div>
-                    <p class="note">El costo de envío mostrado es referencial. Puede variar según la zona de entrega.
-                    </p>
-                </aside>
-            </section>
+        <div class="hero-showcase" aria-label="Productos de cuidado CarePlus"><img class="hero-bottle hero-bottle-one"
+            src="images/protector.jpg" alt="Protector solar CarePlus"><img class="hero-bottle hero-bottle-two"
+            src="images/crema facial hidratante.jpg" alt="Crema hidratante CarePlus"><img
+            class="hero-bottle hero-bottle-three" src="images/Perfume floral.jpg" alt="Perfume floral CarePlus"></div>
+      </section>
+      <div class="benefits">
+        <div class="benefit">
+          <div class="benefit-icon">🚚</div>
+          <div><strong>Entrega a domicilio</strong><small>Consulta los productos y prepara tu pedido.</small></div>
         </div>
-    </main>
-    <footer>
-        <div class="wrap footer-inner">
-            <div><a class="brand" href="#inicio" style="color:white">
-                    <div class="logo">✿</div>
-                    <div><strong>CarePlus</strong><small style="color:#d1cfe0">Tu belleza, nuestra prioridad</small>
-                    </div>
-                </a>
-                <p>Productos de cuidado personal para acompañarte en tu rutina diaria.</p>
-            </div>
-            <div class="footer-links"><a href="#catalogo">Productos</a><a href="#categorias">Categorías</a><a
-                    href="#videos">Videos</a><a href="#pedido">Hacer un pedido</a></div>
+        <div class="benefit">
+          <div class="benefit-icon">♡</div>
+          <div><strong>Productos para ti</strong><small>Opciones para distintas rutinas de cuidado.</small></div>
         </div>
-    </footer>
-
-    <!-- Reproductor modal: se abre sobre la página actual, sin navegar a otra URL. -->
-    <dialog class="cpv-dialog" id="cpv-dialog" aria-labelledby="cpv-dialog-title">
-        <div class="cpv-dialog__inner">
-            <div class="cpv-dialog__top">
-                <div>
-                    <span class="cpv-eyebrow">CAREPLUS TV</span>
-                    <h2 id="cpv-dialog-title">Video de CarePlus</h2>
-                </div>
-                <button class="cpv-dialog__close" id="cpv-dialog-close" type="button"
-                    aria-label="Cerrar video">×</button>
-            </div>
-            <video id="cpv-player" controls playsinline preload="none"></video>
-            <p class="cpv-dialog__description" id="cpv-dialog-description"></p>
-            <p class="cpv-dialog__error" id="cpv-dialog-error" role="alert" hidden>No se pudo reproducir el video.
-                Comprueba que el archivo MP4 exista en la carpeta indicada.</p>
+        <div class="benefit">
+          <div class="benefit-icon">🔒</div>
+          <div><strong>Compra sencilla</strong><small>Revisa tu pedido antes de confirmarlo.</small></div>
         </div>
-    </dialog>
-
-    <!-- Se conserva el JavaScript original del catálogo, carrito y pedidos. -->
-    <script src="js/index.js"></script>
-    <!-- Datos y lógica de la nueva sección, en archivos independientes. -->
-    <script src="js/data/videos.js"></script>
-    <script src="js/videos.js"></script>
+      </div>
+      <section class="section-block">
+        <div class="section-head">
+          <div>
+            <h2>Compra por categoría</h2>
+            <p>Encuentra lo que mejor se adapta a tu rutina.</p>
+          </div><a class="mini-link" href="categorias.html">Ver todas →</a>
+        </div>
+        <div class="categories home-categories"><a class="category"
+            href="productos.html?categoria=Facial"><span>🧖</span>Rostro</a><a class="category"
+            href="productos.html?categoria=Cremas"><span>🧴</span>Cuerpo</a><a class="category"
+            href="productos.html?categoria=Capilar"><span>🌿</span>Cabello</a><a class="category"
+            href="productos.html?categoria=Higiene"><span>🫧</span>Higiene</a><a class="category"
+            href="productos.html?categoria=Perfumes"><span>🌸</span>Perfumes</a></div>
+      </section>
+      <section class="section-block">
+        <div class="section-head">
+          <div>
+            <h2>Productos destacados</h2>
+            <p>Un poco de cuidado para cada momento.</p>
+          </div><a class="mini-link" href="productos.html">Ver catálogo completo →</a>
+        </div>
+        <div class="products" id="home-products"></div>
+      </section>
+      <section class="home-video-teaser section-block">
+        <div>
+          <div class="eyebrow">CAREPLUS TV</div>
+          <h2>Momentos de cuidado, ideas para ti</h2>
+          <p>Explora consejos, rutinas y videos de nuestros productos en un espacio hecho para inspirarte.</p><a
+            href="videos.html" class="btn btn-primary">Descubrir videos ▶</a>
+        </div>
+        <div class="teaser-media"><video controls muted playsinline preload="metadata"
+            poster="images/crema facial hidratante.jpg">
+            <source src="videos/CarePlus_video_principal.mp4" type="video/mp4">Tu navegador no admite videos HTML5.
+          </video></div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap footer-inner">
+      <div><a class="brand" href="index.html" style="color:white"><span class="logo-flower" aria-hidden="true"><svg
+              viewBox="0 0 50 54" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23 27C12 14 21 3 32 1c6 13 4 20-9 26Z" fill="#6046c7" />
+              <path d="M25 28C7 18 1 30 2 42c13 7 24 2 23-14Z" fill="#28a895" />
+              <path d="M25 29c7-13 18-15 23-9-1 18-10 26-24 25Z" fill="#4932a7" />
+              <path d="M24 30c-1 10-3 17-7 22" fill="none" stroke="#28a895" stroke-width="2.3" stroke-linecap="round" />
+            </svg></span><span><strong>Care<span style="color:#54c2ad">Plus</span></strong><small
+              style="color:#d1cfe0">Tu belleza, nuestra prioridad</small></span></a>
+        <p>Productos de cuidado personal para acompañarte en tu rutina diaria.</p>
+      </div>
+      <div class="footer-links"><a href="index.html">Inicio</a><a href="categorias.html">Categorías</a><a
+          href="productos.html">Productos</a><a href="videos.html">Videos</a><a href="mi-pedido.html">Mi pedido</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/data/productos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

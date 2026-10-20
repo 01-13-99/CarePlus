@@ -349,10 +349,11 @@ section {
     margin-bottom: 14px;
 }
 
-.product-art img{
+.product-art img {
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Evita que la imagen sobresalga del recuadro */
+    overflow: hidden;
+    /* Evita que la imagen sobresalga del recuadro */
 }
 
 .product-category {
@@ -717,4 +718,296 @@ footer {
         align-items: flex-start;
         flex-direction: column;
     }
+}
+
+/* CarePlus mult página: reglas compartidas de navegación y accesibilidad. */
+.navbar nav a[aria-current="page"] {
+    color: var(--purple);
+}
+
+.navbar nav a[aria-current="page"]::after {
+    content: "";
+    display: block;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--purple);
+    margin-top: 7px;
+}
+
+.logo-flower {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 45px;
+    flex-shrink: 0;
+}
+
+.logo-flower svg {
+    width: 40px;
+    height: 42px;
+}
+
+.brand strong .brand-plus {
+    color: #18a083;
+}
+
+.brand strong .brand-care {
+    color: var(--purple-dark);
+}
+
+.brand .tagline {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.nav-search-form {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.nav-right .search {
+    width: 205px;
+}
+
+.cart-btn {
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    min-width: 55px;
+}
+
+.cart-btn:hover {
+    background: #e6dcff;
+}
+
+.btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.btn-light:hover {
+    border-color: #c8b9f1;
+    background: #fbf9ff;
+}
+
+.page-banner {
+    margin: 30px 0 25px;
+    padding: 34px 38px;
+    border-radius: 22px;
+    background: linear-gradient(112deg, #eeebff, #f8f2ff 65%, #fff0f5);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner .eyebrow {
+    margin: 0 0 10px;
+}
+
+.page-banner h1 {
+    font-size: clamp(30px, 3.8vw, 43px);
+    letter-spacing: -1.1px;
+    line-height: 1.1;
+    margin: 0 0 10px;
+}
+
+.page-banner p {
+    font-size: 14px;
+    color: #67677d;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 680px;
+}
+
+.crumb {
+    font-size: 12px;
+    color: #77738a;
+    margin-bottom: 14px;
+}
+
+.crumb a {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+.page-main {
+    min-height: 62vh;
+}
+
+.mini-link {
+    color: var(--purple);
+    font-weight: 800;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.mini-link:hover {
+    text-decoration: underline;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.section-block {
+    margin: 40px 0 55px;
+}
+
+.product-foot .add {
+    display: grid;
+    place-items: center;
+}
+
+.product-details-link {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--purple);
+    background: transparent;
+    border: none;
+    padding: 8px 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.product-details-link:hover {
+    text-decoration: underline;
+}
+
+.product:hover {
+    border-color: #d8ccf7;
+}
+
+.empty a {
+    color: var(--purple);
+    font-weight: 700;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 10px;
+    border-radius: 50px;
+    background: #edf9f3;
+    color: #178456;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #a38ae7;
+    outline-offset: 3px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+@media(max-width:980px) {
+    .navbar {
+        gap: 10px;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    .nav-right .search {
+        width: 158px;
+    }
+}
+
+@media(max-width:780px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 12px 0;
+    }
+
+    .navbar nav {
+        order: 3;
+        flex: 0 0 100%;
+        justify-content: space-between;
+        gap: 13px;
+        overflow-x: auto;
+        padding: 7px 0;
+    }
+
+    .nav-right .search {
+        width: clamp(105px, 24vw, 200px);
+    }
+
+    .brand {
+        margin-right: auto;
+    }
+
+    .page-banner {
+        padding: 26px 22px;
+    }
+}
+
+@media(max-width:430px) {
+    .brand strong {
+        font-size: 19px;
+    }
+
+    .logo-flower {
+        width: 33px;
+    }
+
+    .logo-flower svg {
+        width: 33px;
+    }
+
+    .nav-right .search {
+        width: 105px;
+    }
+
+    .nav-right .search::placeholder {
+        font-size: 10px;
+    }
+
+    .cart-btn {
+        padding: 10px 9px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
+
+/* Mensaje flotante compartido para confirmar acciones del carrito. */
+.cp-global-notice {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translate(-50%, 15px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 30;
+    background: #2e2552;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 15px 35px #2b1e4f44;
+    transition: opacity .2s, transform .2s;
+    max-width: min(90%, 470px);
+    text-align: center;
+}
+
+.cp-global-notice.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
